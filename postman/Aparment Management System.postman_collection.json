@@ -1,0 +1,1818 @@
+{
+	"info": {
+		"_postman_id": "cc61514c-1860-4087-b0a3-27711043c5d2",
+		"name": "Aparment Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "apartments",
+			"item": [
+				{
+					"name": "/apartment/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Naylalabs Apartmanı\",\n    \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n    \"capacity\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/v1/apartments"
+					},
+					"response": [
+						{
+							"name": "/success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Naylalabs Apartmanı\",\n    \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n    \"capacity\": 6\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/v1/apartments"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "207"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cf-vzKh/0hRELLxVquTWPGu9VpJ8Rw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Dec 2021 10:26:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Naylalabs Apartmanı\",\n    \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n    \"capacity\": 6,\n    \"_id\": \"61cc37dd2d8fac16bcc8839b\",\n    \"created_at\": \"2021-12-29T10:26:37.279Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "/validation-errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Naylalabs Apartmanı\",\n    \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n    \"capacity\": 6\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/v1/apartments"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "848"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"350-ljGFd2hWjbzDCHmt3DX1+Oj+7wI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Dec 2021 10:11:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"capacity\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"The capacity field is required.\",\n            \"properties\": {\n                \"message\": \"The capacity field is required.\",\n                \"type\": \"required\",\n                \"path\": \"capacity\"\n            },\n            \"kind\": \"required\",\n            \"path\": \"capacity\"\n        },\n        \"address\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"The address field is required.\",\n            \"properties\": {\n                \"message\": \"The address field is required.\",\n                \"type\": \"required\",\n                \"path\": \"address\"\n            },\n            \"kind\": \"required\",\n            \"path\": \"address\"\n        },\n        \"name\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"The name field is required.\",\n            \"properties\": {\n                \"message\": \"The name field is required.\",\n                \"type\": \"required\",\n                \"path\": \"name\"\n            },\n            \"kind\": \"required\",\n            \"path\": \"name\"\n        }\n    },\n    \"_message\": \"apartment validation failed\",\n    \"name\": \"ValidationError\",\n    \"message\": \"apartment validation failed: capacity: The capacity field is required., address: The address field is required., name: The name field is required.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/apartment/list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/api/v1/apartments"
+					},
+					"response": [
+						{
+							"name": "/success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/apartments"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "209"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d1-8yEg2mt1a16U3tPyhrGDRltU0SQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Dec 2021 10:27:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"61cc37dd2d8fac16bcc8839b\",\n        \"name\": \"Naylalabs Apartmanı\",\n        \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n        \"capacity\": 6,\n        \"created_at\": \"2021-12-29T10:26:37.279Z\",\n        \"__v\": 0\n    }\n]"
+						},
+						{
+							"name": "/empty-data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/apartments"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Dec 2021 10:19:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
+				},
+				{
+					"name": "/apartment/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/api/v1/apartments/61cc4cea3be501ebee23f228"
+					},
+					"response": [
+						{
+							"name": "/success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/apartments/61cc37dd2d8fac16bcc8839b"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "207"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cf-/24gsVDXPApT+ZUxStv5p5TFhN8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Dec 2021 10:27:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"61cc37dd2d8fac16bcc8839b\",\n    \"name\": \"Naylalabs Apartmanı\",\n    \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n    \"capacity\": 6,\n    \"created_at\": \"2021-12-29T10:26:37.279Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "/not-found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/apartments/61cc37dd2d8fac16bcc8839e"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-NZutPVonjRVGknMM87J+fpi/jos\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Dec 2021 11:40:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"The requested information could not be found\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/apartment/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Naylalabs Apartmanı\",\n    \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n    \"capacity\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/v1/apartments/61cc37dd2d8fac16bcc8839b"
+					},
+					"response": [
+						{
+							"name": "/success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Naylalabs Apartmanı\",\n    \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n    \"capacity\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/v1/apartments/61cc37dd2d8fac16bcc8839b"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "208"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d0-02rO0wWInwP4I+ntOX+6yIJrKqA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Dec 2021 11:44:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Naylalabs Apartmanı\",\n    \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n    \"capacity\": 10,\n    \"created_at\": \"2021-12-29T10:26:37.279Z\",\n    \"_id\": \"61cc37dd2d8fac16bcc8839b\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "/not-found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Naylalabs Apartmanı\",\n    \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n    \"capacity\": 6\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/v1/apartments/61cc37dd2d8fac16bcc8839e"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-NZutPVonjRVGknMM87J+fpi/jos\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Dec 2021 11:46:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"The requested information could not be found\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/apartment/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{url}}/api/v1/apartments/61cc37dd2d8fac16bcc8839b"
+					},
+					"response": [
+						{
+							"name": "/success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{url}}/api/v1/apartments/61cc37dd2d8fac16bcc8839b"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "208"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d0-NSECDAOS187AJ99Gj2tL0e1Fgug\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Dec 2021 11:54:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"61cc37dd2d8fac16bcc8839b\",\n    \"name\": \"Naylalabs Apartmanı\",\n    \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n    \"capacity\": 10,\n    \"created_at\": \"2021-12-29T10:26:37.279Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "/not-found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{url}}/api/v1/apartments/61cc37dd2d8fac16bcc8839e"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-NZutPVonjRVGknMM87J+fpi/jos\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Dec 2021 11:56:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"The requested information could not be found\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "/user/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Anıl\",\n    \"surname\": \"Adıyaman\",\n    \"phone_number\": \"+905528747444\",\n    \"email\": \"ania4@gmail.com\",\n    \"birth_date\": \"1996-01-28\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/v1/users"
+					},
+					"response": [
+						{
+							"name": "/success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Anıl\",\n    \"surname\": \"Adıyaman\",\n    \"phone_number\": \"+905528747412\",\n    \"email\": \"ania7@gmail.com\",\n    \"birth_date\": \"1996-01-28\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/v1/users"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "258"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"102-Jf4ln+l/jxZlM8zMJ245yoZ6goA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jan 2022 09:45:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Anıl\",\n    \"surname\": \"Adıyaman\",\n    \"phone_number\": \"+905528747412\",\n    \"email\": \"ania7@gmail.com\",\n    \"birth_date\": \"1996-01-28T00:00:00.000Z\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n    \"_id\": \"61d2c5a999057c475ec8458c\",\n    \"created_at\": \"2022-01-03T09:45:13.622Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "/validation-errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/v1/users"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1643"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"66b-+mPUVzkkYhx5PUz4nPEyOflc/fM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Dec 2021 09:55:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"apartment_id\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"The apartment_id field is required.\",\n            \"properties\": {\n                \"message\": \"The apartment_id field is required.\",\n                \"type\": \"required\",\n                \"path\": \"apartment_id\"\n            },\n            \"kind\": \"required\",\n            \"path\": \"apartment_id\"\n        },\n        \"birth_date\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"Path `birth_date` is required.\",\n            \"properties\": {\n                \"message\": \"Path `birth_date` is required.\",\n                \"type\": \"required\",\n                \"path\": \"birth_date\"\n            },\n            \"kind\": \"required\",\n            \"path\": \"birth_date\"\n        },\n        \"email\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"The email field is required.\",\n            \"properties\": {\n                \"message\": \"The email field is required.\",\n                \"type\": \"required\",\n                \"path\": \"email\"\n            },\n            \"kind\": \"required\",\n            \"path\": \"email\"\n        },\n        \"phone_number\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"The phone_number field is required.\",\n            \"properties\": {\n                \"message\": \"The phone_number field is required.\",\n                \"type\": \"required\",\n                \"path\": \"phone_number\"\n            },\n            \"kind\": \"required\",\n            \"path\": \"phone_number\"\n        },\n        \"surname\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"The surname field is required.\",\n            \"properties\": {\n                \"message\": \"The surname field is required.\",\n                \"type\": \"required\",\n                \"path\": \"surname\"\n            },\n            \"kind\": \"required\",\n            \"path\": \"surname\"\n        },\n        \"name\": {\n            \"name\": \"ValidatorError\",\n            \"message\": \"The name field is required.\",\n            \"properties\": {\n                \"message\": \"The name field is required.\",\n                \"type\": \"required\",\n                \"path\": \"name\"\n            },\n            \"kind\": \"required\",\n            \"path\": \"name\"\n        }\n    },\n    \"_message\": \"user validation failed\",\n    \"name\": \"ValidationError\",\n    \"message\": \"user validation failed: apartment_id: The apartment_id field is required., birth_date: Path `birth_date` is required., email: The email field is required., phone_number: The phone_number field is required., surname: The surname field is required., name: The name field is required.\"\n}"
+						},
+						{
+							"name": "/full-building",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Anıl\",\n    \"surname\": \"Adıyaman\",\n    \"phone_number\": \"+905528747474\",\n    \"email\": \"anil@gmail.com\",\n    \"birth_date\": \"1996-01-28\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/v1/users"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-ISOk284sBEqx/0uLn/MMdAt1Gxc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Dec 2021 12:46:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"The building you are trying to add a user to is full.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/user/list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/api/v1/users"
+					},
+					"response": [
+						{
+							"name": "/success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/users"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1791"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6ff-EVFv/G5orYW/mBuq1qWFUqiZBFI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jan 2022 11:20:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": {\n            \"name\": \"ibrahim\",\n            \"surname\": \"Sayar\",\n            \"phone_number\": \"+905522812801\",\n            \"email\": \"adasdas@gmail.com\",\n            \"birth_date\": \"1996-01-28T00:00:00.000Z\",\n            \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n            \"created_at\": \"2021-12-29T11:57:59.837Z\"\n        },\n        \"apartment\": [\n            {\n                \"_id\": \"61cc4cea3be501ebee23f228\",\n                \"name\": \"Naylalabs Apartmanı\",\n                \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n                \"capacity\": 4,\n                \"created_at\": \"2021-12-29T11:56:26.902Z\",\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": {\n            \"name\": \"Anıl\",\n            \"surname\": \"Adıyaman\",\n            \"phone_number\": \"+905528747474\",\n            \"email\": \"anil@gmail.com\",\n            \"birth_date\": \"1996-01-28T00:00:00.000Z\",\n            \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n            \"created_at\": \"2021-12-29T12:56:35.710Z\"\n        },\n        \"apartment\": [\n            {\n                \"_id\": \"61cc4cea3be501ebee23f228\",\n                \"name\": \"Naylalabs Apartmanı\",\n                \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n                \"capacity\": 4,\n                \"created_at\": \"2021-12-29T11:56:26.902Z\",\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": {\n            \"name\": \"Anıl\",\n            \"surname\": \"Adıyaman\",\n            \"phone_number\": \"+905522458787\",\n            \"email\": \"lina@gmail.com\",\n            \"birth_date\": \"1996-01-28T00:00:00.000Z\",\n            \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n            \"created_at\": \"2022-01-03T09:17:11.290Z\"\n        },\n        \"apartment\": [\n            {\n                \"_id\": \"61cc4cea3be501ebee23f228\",\n                \"name\": \"Naylalabs Apartmanı\",\n                \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n                \"capacity\": 4,\n                \"created_at\": \"2021-12-29T11:56:26.902Z\",\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": {\n            \"name\": \"Anıl\",\n            \"surname\": \"Adıyaman\",\n            \"phone_number\": \"+905528747444\",\n            \"email\": \"ania4@gmail.com\",\n            \"birth_date\": \"1996-01-28T00:00:00.000Z\",\n            \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n            \"created_at\": \"2022-01-03T10:14:04.454Z\"\n        },\n        \"apartment\": [\n            {\n                \"_id\": \"61cc4cea3be501ebee23f228\",\n                \"name\": \"Naylalabs Apartmanı\",\n                \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n                \"capacity\": 4,\n                \"created_at\": \"2021-12-29T11:56:26.902Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n]"
+						},
+						{
+							"name": "/empty-data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/users"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-xnj7vsVOWfQ1ATxkina22I+RyxI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jan 2022 11:24:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"Users Not Found.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/user/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/api/v1/users/61cc4d473be501ebee23f22c"
+					},
+					"response": [
+						{
+							"name": "/success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/users/61cc4d473be501ebee23f22c"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "449"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c1-cGgYIXJp8wKG9az3OvIXHcypyyQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jan 2022 11:39:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": {\n            \"name\": \"ibrahim\",\n            \"surname\": \"Sayar\",\n            \"phone_number\": \"+905522812801\",\n            \"email\": \"adasdas@gmail.com\",\n            \"birth_date\": \"1996-01-28T00:00:00.000Z\",\n            \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n            \"created_at\": \"2021-12-29T11:57:59.837Z\"\n        },\n        \"apartment\": [\n            {\n                \"_id\": \"61cc4cea3be501ebee23f228\",\n                \"name\": \"Naylalabs Apartmanı\",\n                \"address\": \"Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1\",\n                \"capacity\": 4,\n                \"created_at\": \"2021-12-29T11:56:26.902Z\",\n                \"__v\": 0\n            }\n        ]\n    }\n]"
+						},
+						{
+							"name": "/not-found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/users/61cc4d473be501ebee23f22d"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-kOUkf1lc+yruW7u9nsloUmko4yU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jan 2022 11:42:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"User Not Found.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/user/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ahmet\",\n    \"surname\": \"Maranki\",\n    \"phone_number\": \"+905529866453\",\n    \"email\": \"maranki4@gmail.com\",\n    \"birth_date\": \"1995-01-19\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/v1/users/61cc4d473be501ebee23f22c"
+					},
+					"response": [
+						{
+							"name": "/success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ahmet\",\n    \"surname\": \"Maranki\",\n    \"phone_number\": \"+905529866453\",\n    \"email\": \"maranki4@gmail.com\",\n    \"birth_date\": \"1995-01-19\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/v1/users/61cc4d473be501ebee23f22c"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"103-epZqIoiMYMeOfDU/E29H2gZs/Pc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jan 2022 11:51:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Ahmet\",\n    \"surname\": \"Maranki\",\n    \"phone_number\": \"+905529866453\",\n    \"email\": \"maranki4@gmail.com\",\n    \"birth_date\": \"1995-01-19T00:00:00.000Z\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n    \"created_at\": \"2021-12-29T11:57:59.837Z\",\n    \"_id\": \"61cc4d473be501ebee23f22c\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "/not-found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ahmet\",\n    \"surname\": \"Maranki\",\n    \"phone_number\": \"+95529866453\",\n    \"email\": \"maranki4@gmail.com\",\n    \"birth_date\": \"1995-01-19\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/v1/users/61cc4d473be501ebee23f22c"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-NZutPVonjRVGknMM87J+fpi/jos\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jan 2022 11:48:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"The requested information could not be found\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/user/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{url}}/api/v1/users/61cc4d473be501ebee23f22c"
+					},
+					"response": [
+						{
+							"name": "/success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{url}}/api/v1/users/61cc4d473be501ebee23f22c"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"103-yF9UZjiSF+/0yRD7FkJBKIEfOC8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jan 2022 11:54:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"61cc4d473be501ebee23f22c\",\n    \"name\": \"Ahmet\",\n    \"surname\": \"Maranki\",\n    \"phone_number\": \"+905529866453\",\n    \"email\": \"maranki4@gmail.com\",\n    \"birth_date\": \"1995-01-19T00:00:00.000Z\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n    \"created_at\": \"2021-12-29T11:57:59.837Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "/not-found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ahmet\",\n    \"surname\": \"Maranki\",\n    \"phone_number\": \"+95529866453\",\n    \"email\": \"maranki4@gmail.com\",\n    \"birth_date\": \"1995-01-19\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/v1/users/61cc4d473be501ebee23f22c"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-NZutPVonjRVGknMM87J+fpi/jos\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jan 2022 11:48:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"message\": \"The requested information could not be found\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "transactions",
+			"item": [
+				{
+					"name": "bills",
+					"item": [
+						{
+							"name": "/bill/create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n    \"amount\": 19.56,\n    \"description\": \"Ocak Ayı Aidatı\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/v1/transactions/bill/create"
+							},
+							"response": [
+								{
+									"name": "/not-found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user_id\": \"61cc5b0393751f2de97f2cb\",\n    \"amount\": 19.56,\n    \"description\": \"Ocak Ayı Aidatı\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{url}}/api/v1/transactions/bill/create"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "39"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"27-kOUkf1lc+yruW7u9nsloUmko4yU\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Jan 2022 12:44:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": {\n        \"message\": \"User Not Found.\"\n    }\n}"
+								},
+								{
+									"name": "/success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n    \"amount\": 19.56,\n    \"description\": \"Ocak Ayı Aidatı\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{url}}/api/v1/transactions/bill/create"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "225"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e1-1vXS1/vo0IF6GQl5S5oKgmztNss\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Jan 2022 12:55:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n    \"status\": false,\n    \"amount\": 19.56,\n    \"description\": \"Ocak Ayı Aidatı\",\n    \"_id\": \"61d2f233d666ae8de0051469\",\n    \"created_at\": \"2022-01-03T12:55:15.942Z\",\n    \"__v\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "/bill/delete/:id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{url}}/api/v1/transactions/bill/delete/61d2f3d6188f8dc6e7999b1d"
+							},
+							"response": [
+								{
+									"name": "/success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": "{{url}}/api/v1/transactions/bill/delete/61d2f233d666ae8de0051469"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "225"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e1-UZVy2iQV2/o1DLUlBJQt16XzX7s\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Jan 2022 13:01:32 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"61d2f233d666ae8de0051469\",\n    \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n    \"status\": false,\n    \"amount\": 19.56,\n    \"description\": \"Ocak Ayı Aidatı\",\n    \"created_at\": \"2022-01-03T12:55:15.942Z\",\n    \"__v\": 0\n}"
+								},
+								{
+									"name": "/error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": "{{url}}/api/v1/transactions/bill/delete/61d2f233d666ae8de00514610"
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "104"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"68-foeophCCHTcYrjwgLRoGHxYDIc4\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Jan 2022 13:01:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": {\n        \"message\": \"Argument passed in must be a string of 12 bytes or a string of 24 hex characters\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "/bill/status/:id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/v1/transactions/bill/status/61d2f3c6188f8dc6e7999b14"
+							},
+							"response": [
+								{
+									"name": "/success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"status\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{url}}/api/v1/transactions/bill/status/61d2f3c6188f8dc6e7999b14"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "224"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e0-eHpbMyykCC2FQh8XMCYvH3WCI6E\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Jan 2022 13:06:26 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n    \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n    \"status\": true,\n    \"amount\": 19.56,\n    \"description\": \"Ocak Ayı Aidatı\",\n    \"created_at\": \"2022-01-03T13:01:58.546Z\",\n    \"_id\": \"61d2f3c6188f8dc6e7999b14\",\n    \"__v\": 0\n}"
+								},
+								{
+									"name": "/error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"status\": true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{url}}/api/v1/transactions/bill/status/61d2f3c6188f8dc6e7999b1a"
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"46-qCMF6pBZW8g4jB12Fr3xCks3yE4\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Jan 2022 13:06:39 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": {\n        \"message\": \"Cannot read properties of null (reading 'set')\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "/user/list-bills/:id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/transactions/user/list-bills/61cc5b0393751fa2de97f2cb"
+							},
+							"response": [
+								{
+									"name": "/success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{url}}/api/v1/transactions/user/list-bills/61cc5b0393751fa2de97f2cb"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "907"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"38b-j5nFfJLzyGRV3cH/l7O/ZBn4tOk\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Jan 2022 13:11:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"_id\": \"61d2f3c6188f8dc6e7999b14\",\n        \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n        \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n        \"status\": true,\n        \"amount\": 19.56,\n        \"description\": \"Ocak Ayı Aidatı\",\n        \"created_at\": \"2022-01-03T13:01:58.546Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"61d2f3cd188f8dc6e7999b17\",\n        \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n        \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n        \"status\": false,\n        \"amount\": 19.56,\n        \"description\": \"Şubat Ayı Aidatı\",\n        \"created_at\": \"2022-01-03T13:02:05.757Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"61d2f3d3188f8dc6e7999b1a\",\n        \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n        \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n        \"status\": false,\n        \"amount\": 19.56,\n        \"description\": \"Mart Ayı Aidatı\",\n        \"created_at\": \"2022-01-03T13:02:11.315Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"61d2f3f8188f8dc6e7999b21\",\n        \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n        \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n        \"status\": false,\n        \"amount\": 19.56,\n        \"description\": \"Nisan Ayı Aidatı\",\n        \"created_at\": \"2022-01-03T13:02:48.513Z\",\n        \"__v\": 0\n    }\n]"
+								},
+								{
+									"name": "/empty-data",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{url}}/api/v1/transactions/user/list-bills/61cc5b0393751fa2de97f2cc"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Jan 2022 13:13:06 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "[]"
+								}
+							]
+						},
+						{
+							"name": "/user/unpaid-bills-total/:id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/transactions/user/unpaid-bills-total/61cc5b0393751fa2de97f2cb"
+							},
+							"response": [
+								{
+									"name": "/success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{url}}/api/v1/transactions/user/unpaid-bills-total/61cc5b0393751fa2de97f2cb"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "27"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1b-MCPoHpTmxqYoHZLIEeDeo1EG4v4\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Jan 2022 13:47:04 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"total\": 58.67999999999999\n}"
+								}
+							]
+						},
+						{
+							"name": "/user/paid-bills-total",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/transactions/user/paid-bills-total/61cc5b0393751fa2de97f2cb"
+							},
+							"response": [
+								{
+									"name": "/success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{url}}/api/v1/transactions/user/paid-bills-total/61cc5b0393751fa2de97f2cb"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "15"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f-rDqfgTSQ49HXKFZZVc4rGFqMgH8\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Jan 2022 13:49:26 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"total\": 19.56\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "apartment",
+					"item": [
+						{
+							"name": "/apartment/bill-list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/transactions/apartment/list-bills/61cc4cea3be501ebee23f228"
+							},
+							"response": [
+								{
+									"name": "/success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{url}}/api/v1/transactions/apartment/list-bills/61cc4cea3be501ebee23f228"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "907"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"38b-j5nFfJLzyGRV3cH/l7O/ZBn4tOk\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Jan 2022 13:57:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"_id\": \"61d2f3c6188f8dc6e7999b14\",\n        \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n        \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n        \"status\": true,\n        \"amount\": 19.56,\n        \"description\": \"Ocak Ayı Aidatı\",\n        \"created_at\": \"2022-01-03T13:01:58.546Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"61d2f3cd188f8dc6e7999b17\",\n        \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n        \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n        \"status\": false,\n        \"amount\": 19.56,\n        \"description\": \"Şubat Ayı Aidatı\",\n        \"created_at\": \"2022-01-03T13:02:05.757Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"61d2f3d3188f8dc6e7999b1a\",\n        \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n        \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n        \"status\": false,\n        \"amount\": 19.56,\n        \"description\": \"Mart Ayı Aidatı\",\n        \"created_at\": \"2022-01-03T13:02:11.315Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"61d2f3f8188f8dc6e7999b21\",\n        \"user_id\": \"61cc5b0393751fa2de97f2cb\",\n        \"apartment_id\": \"61cc4cea3be501ebee23f228\",\n        \"status\": false,\n        \"amount\": 19.56,\n        \"description\": \"Nisan Ayı Aidatı\",\n        \"created_at\": \"2022-01-03T13:02:48.513Z\",\n        \"__v\": 0\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "/apartment/total-building-bill",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/v1/transactions/apartment/total/61cc4cea3be501ebee23f228"
+							},
+							"response": [
+								{
+									"name": "/success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{url}}/api/v1/transactions/apartment/total/61cc4cea3be501ebee23f228"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "27"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1b-MCPoHpTmxqYoHZLIEeDeo1EG4v4\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 03 Jan 2022 14:00:57 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"total\": 58.67999999999999\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

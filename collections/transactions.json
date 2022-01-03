@@ -1,0 +1,69 @@
+[{
+  "_id": {
+    "$oid": "61d2f3c6188f8dc6e7999b14"
+  },
+  "user_id": {
+    "$oid": "61cc5b0393751fa2de97f2cb"
+  },
+  "apartment_id": {
+    "$oid": "61cc4cea3be501ebee23f228"
+  },
+  "status": true,
+  "amount": 19.56,
+  "description": "Ocak Ayı Aidatı",
+  "created_at": {
+    "$date": "2022-01-03T13:01:58.546Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d2f3cd188f8dc6e7999b17"
+  },
+  "user_id": {
+    "$oid": "61cc5b0393751fa2de97f2cb"
+  },
+  "apartment_id": {
+    "$oid": "61cc4cea3be501ebee23f228"
+  },
+  "status": false,
+  "amount": 19.56,
+  "description": "Şubat Ayı Aidatı",
+  "created_at": {
+    "$date": "2022-01-03T13:02:05.757Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d2f3d3188f8dc6e7999b1a"
+  },
+  "user_id": {
+    "$oid": "61cc5b0393751fa2de97f2cb"
+  },
+  "apartment_id": {
+    "$oid": "61cc4cea3be501ebee23f228"
+  },
+  "status": false,
+  "amount": 19.56,
+  "description": "Mart Ayı Aidatı",
+  "created_at": {
+    "$date": "2022-01-03T13:02:11.315Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d2f3f8188f8dc6e7999b21"
+  },
+  "user_id": {
+    "$oid": "61cc5b0393751fa2de97f2cb"
+  },
+  "apartment_id": {
+    "$oid": "61cc4cea3be501ebee23f228"
+  },
+  "status": false,
+  "amount": 19.56,
+  "description": "Nisan Ayı Aidatı",
+  "created_at": {
+    "$date": "2022-01-03T13:02:48.513Z"
+  },
+  "__v": 0
+}]

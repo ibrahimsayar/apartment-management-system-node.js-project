@@ -1,8 +1,7 @@
 const express = require('express');
+const Apartment = require('../models/Apartment');
 
 const router = express.Router();
-
-const Apartment = require('../models/Apartment');
 
 let errorMessage = 'The requested information could not be found';
 

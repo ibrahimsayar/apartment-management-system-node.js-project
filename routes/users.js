@@ -1,33 +1,32 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
-const router = express.Router();
-
 const User = require('../models/User');
 const Apartment = require('../models/Apartment');
+
+const router = express.Router();
 
 let errorMessage = 'The requested information could not be found';
 
 /* POST user add. */
 router.post('/', async function (req, res, next) {
     try {
-        const user = new User(req.body);
+        let user = new User(req.body);
 
-        const apartment = await Apartment.findById(user.apartment_id);
+        let apartment = await Apartment.findById(user.apartment_id);
 
         if (!apartment) {
             res.status(404).json({error: {message: 'Apartment Not Found.'}});
             return;
         }
 
-        const capacityCount = await User.find({apartment_id: user.apartment_id}).count()
+        let capacityCount = await User.find({apartment_id: user.apartment_id}).count()
 
         if (capacityCount >= apartment.capacity) {
             res.status(400).json({error: {message: 'The building you are trying to add a user to is full.'}});
             return;
         }
 
-        const userData = await user.save();
+        let userData = await user.save();
         res.status(200).json(userData);
 
     } catch (err) {
@@ -37,7 +36,7 @@ router.post('/', async function (req, res, next) {
 
 /* GET users list. */
 router.get('/', async function (req, res) {
-    const users = await User.aggregate([
+    let users = await User.aggregate([
         {
             $lookup: {
                 from: 'apartments',
@@ -78,7 +77,7 @@ router.get('/', async function (req, res) {
 
 /* GET user list by ID. */
 router.get('/:id', async function (req, res) {
-    const users = await User.aggregate([
+    let users = await User.aggregate([
         {
             $match: {
                 '_id': mongoose.Types.ObjectId(req.params.id),

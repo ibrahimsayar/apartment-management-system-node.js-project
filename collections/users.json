@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "61cc5b0393751fa2de97f2cb"
+  },
+  "name": "İbrahim",
+  "surname": "Sayar",
+  "phone_number": "+905522812801",
+  "email": "ibrahimsayar96@gmail.com",
+  "birth_date": {
+    "$date": "1996-01-28T00:00:00Z"
+  },
+  "apartment_id": {
+    "$oid": "61cc4cea3be501ebee23f228"
+  },
+  "created_at": {
+    "$date": "2021-12-29T12:56:35.710Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d2bf172353d72c468be868"
+  },
+  "name": "Anıl",
+  "surname": "Adıyaman",
+  "phone_number": "+905352869594",
+  "email": "aniladiyaman@gmail.com",
+  "birth_date": {
+    "$date": "1996-01-28T00:00:00Z"
+  },
+  "apartment_id": {
+    "$oid": "61cc4cea3be501ebee23f228"
+  },
+  "created_at": {
+    "$date": "2022-01-03T09:17:11.290Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61d2cc6cf4ae9fce69c1977b"
+  },
+  "name": "Fikri Uğur",
+  "surname": "Yetkil",
+  "phone_number": "+905335948584",
+  "email": "fuy@gmail.com",
+  "birth_date": {
+    "$date": "1996-01-28T00:00:00Z"
+  },
+  "apartment_id": {
+    "$oid": "61cc4cea3be501ebee23f228"
+  },
+  "created_at": {
+    "$date": "2022-01-03T10:14:04.454Z"
+  },
+  "__v": 0
+}]

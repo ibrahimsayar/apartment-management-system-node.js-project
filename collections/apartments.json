@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "61cc4cea3be501ebee23f228"
+  },
+  "name": "Naylalabs Apartmanı",
+  "address": "Cumhuriyet Mah. Adnan Menderes Bulv. 1. Kısım Ada Apt. No:299 Kat:1",
+  "capacity": 4,
+  "created_at": {
+    "$date": "2021-12-29T11:56:26.902Z"
+  },
+  "__v": 0
+}]
