@@ -40,8 +40,6 @@ What you can do with this project?
 #### Dependencies
 - **Node.js** (v16.13.0+)
 - **Npm** (v8.1.0)
-- **MongoDB Compass** (v1.29.6)
-- **Postman** (v9.6.2)
 
 ### Notes
 In the project, there is the MongoDB collection of the project in the collections folder.
