@@ -50,14 +50,14 @@ Again, there is the postman's collection in the postman folder.
 ### Install & Run
 
 ```bash
-#We download the repo.
+# We download the repo.
 git clone https://github.com/ibrahimsayar/apartment-management-system-node.js-project.git
 cd apartment-management-system-node.js-project/
 
-#We install Node.js packages.
+# We install Node.js packages.
 npm install
 
-#We start the application.
-#http://127.0.0.1:3000/
+# We start the application.
+# http://127.0.0.1:3000/
 npm start
 ```
