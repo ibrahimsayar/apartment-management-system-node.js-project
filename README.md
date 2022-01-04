@@ -64,5 +64,5 @@ npm start
 
 ```bash
 # If you want to be tested
-npm start
+npm test
 ```
