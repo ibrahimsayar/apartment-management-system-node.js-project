@@ -2,6 +2,8 @@
 
 Apartment management system REST API made with Node.js express library
 
+![Test Screen](https://github.com/ibrahimsayar/apartment-management-system-node.js-project/blob/main/public/images/home-page.png?raw=true)
+
 ---
 
 **Version**: 0.0.0.1\
@@ -68,4 +70,4 @@ npm test
 ```
 Test Screen
 
-![alt text](https://github.com/ibrahimsayar/apartment-management-system-node.js-project/blob/main/public/images/test-image.png?raw=true)
+![Test Screen](https://github.com/ibrahimsayar/apartment-management-system-node.js-project/blob/main/public/images/test-image.png?raw=true)
