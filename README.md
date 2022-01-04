@@ -1,6 +1,6 @@
 # Apartment Management System - REST API
 
-**Apartment management system REST API made with Node.js express library**
+Apartment management system REST API made with Node.js express library
 
 ---
 
@@ -57,5 +57,12 @@ npm install
 
 # We start the application.
 # http://127.0.0.1:3000/
+npm start
+```
+
+### Test
+
+```bash
+# If you want to be tested
 npm start
 ```
